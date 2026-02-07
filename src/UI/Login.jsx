@@ -1,53 +1,62 @@
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import AuthLayout from "@/layouts/AuthLayout";
 
-const Login = () => {
+const Login = ({ open, onOpenChange }) => {
   return (
-    <AuthLayout>
-      <Card className="w-full max-w-md shadow-lg">
-        <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-semibold">
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      {/* Trigger Button */}
+      {/* Dialog Content */}
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader className="text-center">
+          <DialogTitle className="text-2xl font-semibold">
             Login to your account
-          </CardTitle>
-          <CardDescription className="text-sm">
-            Enter your credentials to login
-          </CardDescription>
-        </CardHeader>
+          </DialogTitle>
+          <DialogDescription>
+            Enter your credentials below to get started
+          </DialogDescription>
+        </DialogHeader>
 
-        <CardContent>
-          <form className="space-y-5">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
-            </div>
+        {/* Form */}
+        <form className="space-y-5">
+          <div className="space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input
+              id="email"
+              type="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input id="password" type="password" required />
-            </div>
-          </form>
-        </CardContent>
+          <div className="space-y-2">
+            <Label htmlFor="password">Password</Label>
+            <Input
+              id="password"
+              type="password"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
 
-        <CardFooter className="flex flex-col gap-3">
-          <Button className="w-full text-base">Login</Button>
-        </CardFooter>
-      </Card>
-    </AuthLayout>
+          {/* Footer */}
+          <DialogFooter className="flex flex-col">
+            <Button type="submit" className="w-full">
+              Login
+            </Button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
   );
 };
 
