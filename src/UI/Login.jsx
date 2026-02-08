@@ -62,6 +62,7 @@ const Login = ({ open, onOpenChange }) => {
               type="email"
               placeholder="Enter your email"
               {...register("email", {
+                required: true,
                 pattern: {
                   value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                   message: "Please enter a valid email",
