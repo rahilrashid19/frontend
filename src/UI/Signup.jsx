@@ -14,7 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 
-const SignUp = ({ open, onOpenChange }) => {
+const SignUp = ({ open, onOpenChange, setShowLoginModal }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       {/* Trigger Button */}
@@ -126,13 +126,17 @@ const SignUp = ({ open, onOpenChange }) => {
             </Button>
           </DialogFooter>
           <p className="text-sm text-muted-foreground text-center">
-            Already have an account ?
-            <Link
-              to="/login"
+            Already have an account?{" "}
+            <button
+              type="button"
+              onClick={() => {
+                onOpenChange(false); // close signup
+                setShowLoginModal(true);
+              }}
               className="font-medium text-primary hover:underline"
             >
               Login
-            </Link>
+            </button>
           </p>
         </form>
       </DialogContent>

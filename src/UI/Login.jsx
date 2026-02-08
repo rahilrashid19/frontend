@@ -14,7 +14,6 @@ import { Label } from "@/components/ui/label";
 const Login = ({ open, onOpenChange }) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      {/* Trigger Button */}
       {/* Dialog Content */}
       <DialogContent className="sm:max-w-md">
         <DialogHeader className="text-center">

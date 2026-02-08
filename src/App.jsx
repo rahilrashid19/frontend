@@ -12,9 +12,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/login" element={<Login />} />
-
       <Route path="/home" element={<Home />}>
         <Route index element={<Feed />} />
         <Route path="feed" element={<Feed />} />

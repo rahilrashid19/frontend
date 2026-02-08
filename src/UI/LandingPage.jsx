@@ -48,7 +48,11 @@ const LandingPage = () => {
         </div>
       </div>
       {showSignUpModal && (
-        <SignUp open={showSignUpModal} onOpenChange={setShowSignUpModal} />
+        <SignUp
+          open={showSignUpModal}
+          onOpenChange={setShowSignUpModal}
+          setShowLoginModal={setShowLoginModal}
+        />
       )}
       {showLoginModal && (
         <Login open={showLoginModal} onOpenChange={setShowLoginModal} />
