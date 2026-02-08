@@ -5,7 +5,10 @@ const Home = () => {
   return (
     <div className="flex min-h-screen">
       <Navbar />
-      <Outlet />
+      <div>
+        <h1>Header</h1>
+        <Outlet />
+      </div>
     </div>
   );
 };
