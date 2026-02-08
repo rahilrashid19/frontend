@@ -3,17 +3,6 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
   return (
     <aside className="h-screen w-64 bg-white border-r border-gray-200 flex flex-col">
-      {/* Logo */}
-      <div className="h-16 flex items-center justify-center border-b">
-        <Link to="/">
-          <img
-            src="/src/assets/new_logo.png"
-            alt="Logo"
-            className="h-20 w-auto"
-          />
-        </Link>
-      </div>
-
       {/* Nav Links */}
       <nav className="flex flex-col gap-1 p-4">
         <NavLink
